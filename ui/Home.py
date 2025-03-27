@@ -28,7 +28,7 @@ async def header():
 async def body():
     st.markdown("### Available Agents")
 
-    col1, col2 = st.columns(2)
+    col1, col2, col3 = st.columns(3)
     with col1:
         st.markdown(
             """
@@ -56,6 +56,20 @@ async def body():
         )
         if st.button("Launch Scholar", key="scholar_button"):
             st.switch_page("pages/2_Scholar.py")
+
+    with col3:
+        st.markdown(
+            """
+        <div style="padding: 20px; border-radius: 10px; border: 1px solid #ddd; margin-bottom: 20px;">
+            <h3>Legal Assistant</h3>
+            <p>A specialized legal assistant focusing on Italian law and legal documents.</p>
+            <p>Perfect for legal research and document analysis.</p>
+        </div>
+        """,
+            unsafe_allow_html=True,
+        )
+        if st.button("Launch Legal Assistant", key="legal_button"):
+            st.switch_page("pages/3_Legal.py")
 
 
 async def main():
